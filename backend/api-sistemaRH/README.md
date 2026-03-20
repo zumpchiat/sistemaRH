@@ -31,36 +31,6 @@ Busca dinâmica no endpoint de funcionários permitindo filtragem combinada por:
 * **CPF** (Busca exata).
 * **Cargo** (Filtro por ID do cargo).
 
-## 📂 Estrutura de Código Relevante
-
-* `app/Http/Controllers/EmployeeController.php`: Centraliza a lógica de negócio com métodos privados para evitar repetição de código (**DRY**).
-* `app/Rules/Cpf.php`: Classe responsável pela lógica matemática do CPF.
-* `database/migrations/`: Migrações para estruturação das tabelas de `employees` e `roles`.
-
-## 🚀 Como Executar o Projeto
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-    ```
-
-2.  **Instale as dependências via Composer:**
-    ```bash
-    composer install
-    ```
-
-3.  **Configure o Ambiente:**
-    * Renomeie `.env.example` para `.env`.
-    * Configure as credenciais do seu banco de dados MySQL.
-
-4.  **Execute as Migrações:**
-    ```bash
-    php artisan migrate
-    ```
-
-5.  **Configure o Idioma (Opcional):**
-    No arquivo `config/
-
 
 ## 📡 Endpoints da API
 
@@ -82,37 +52,3 @@ Busca dinâmica no endpoint de funcionários permitindo filtragem combinada por:
 | **POST** | `/api/roles` | `salary >= 0`, `name unique` | Cadastra um novo cargo com validação de valor positivo. |
 | **PUT** | `/api/roles/{id}` | `salary >= 0` | Atualiza dados de um cargo existente. |
 | **DELETE** | `/api/roles/{id}` | Proteção de integridade | Remove um cargo do sistema. |
-
-
-### 📖 Paginação e Consumo da API
-
-Os endpoints de listagem (como `/api/employees`) utilizam a paginação nativa do Laravel (**10 registros por página**). Isso altera a estrutura da resposta JSON:
-
-* **Estrutura da Resposta:** Os dados dos funcionários não retornam mais em um array simples, mas dentro da chave `data`.
-* **Metadados:** A API retorna informações de controle como `current_page`, `last_page`, `total` e `per_page`.
-* **Como navegar:** Para acessar outras páginas, envie o parâmetro `page` na URL.
-    * Exemplo: `GET /api/employees?page=2`
-
-#### Exemplo de Resposta:
-```json
-{
-    "current_page": 1,
-    "data": [
-        { "id": 1, "name": "Renan", "role_id": 1, ... },
-        { "id": 2, "name": "Ana Karla", "role_id": 2, ... }
-    ],
-    "first_page_url": "...",
-    "last_page": 5,
-    "total": 50
-}
-
-```
-
-## 🧪 Testes e Dados Iniciais
-
-Para facilitar o teste da paginação e dos filtros de pesquisa, o projeto inclui **Seeders** que populam o banco de dados com cargos e 50 funcionários fictícios.
-
-Para popular o banco, execute:
-```bash
-php artisan db:seed
-```https://oglobo.globo.com/economia/imposto-de-renda/noticia/2026/03/17/imposto-de-renda-2026-receita-federal-passa-a-cruzar-100percent-das-despesas-medicas-na-malha-fina.ghtml
