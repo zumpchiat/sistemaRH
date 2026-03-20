@@ -1,0 +1,141 @@
+@baseUrl = http://127.0.0.1/Laravel-8771x260316142512/public/api
+
+### Criar um novo Cargo
+POST {{baseUrl}}/roles
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Desenvolvedor 3",
+    "salary":  4800.50
+}
+
+###  Listar todos os cargos
+GET {{baseUrl}}/roles
+Accept: application/json
+
+### Pesquisar cargos por nome
+GET {{baseUrl}}/roles?search=Desenvolvedor
+Accept: application/json
+
+###  Buscar um cargo pelo ID **
+GET {{baseUrl}}/roles/20
+Accept: application/json
+
+###  Atualizar um cargo existente
+PUT {{baseUrl}}/roles/9
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Programador",
+    "salary": 7500.00
+}
+
+###  Deletar um cargo
+DELETE {{baseUrl}}/roles/20
+Accept: application/json
+
+
+### Employee
+
+###  Criar um novo Funcionário
+POST {{baseUrl}}/employees
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Mosca 2 bauz",    
+    "birth_date": "1990-05-15",
+    "cpf": "93848173417",
+    "email": "Mosca@exemplo.com",
+    "phone": "21999998888",
+    "cep": "",
+    "street": "",
+    "number": "",
+    "neighborhood": "",
+    "city": "",
+    "state": "",
+    "role_id": 2
+}
+
+###  Listar todos os Funcionários (Relatório inicial)
+GET {{baseUrl}}/employees
+Accept: application/json
+
+
+### Filtrar por CPF (Requisito da Proposta)
+GET {{baseUrl}}/employees?search=93848173417
+Accept: application/json
+
+### 10. Atualizar dados de um Funcionário
+PUT {{baseUrl}}/employees/16
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "João Santos Silva",
+    "email": "joao.silva@novoemail.com",
+    "cpf": "53579651617",
+    "role_id": 2
+}
+
+###  Atualizar Funcionário (Teste de Endereço)
+PUT {{baseUrl}}/employees/20
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Mosca bauo",
+    "birth_date": "1989-06-15",
+    "cpf": "66176604478",
+    "cep": "25369887",
+    "role_id": 4,
+    "phone": "254125411",
+    "email": "joao.silva@novoemail.com",
+    "street": "Av Getúlio Vargas",
+    "number": "600",
+    "neighborhood": "Centro1",
+    "city": "Nilópolis",
+    "state": "SP"
+}
+
+### 11. Deletar um Funcionário
+DELETE {{baseUrl}}/employees/2
+Accept: application/json
+
+
+### Relatório
+
+### Listar todos (Relatório Geral)
+GET {{baseUrl}}/employees
+Accept: application/json
+
+### Filtrar por Nome
+GET {{baseUrl}}/employees?search=renan
+Accept: application/json
+
+### Filtrar por Cargo (Troque o ID pelo cargo que deseja filtrar)
+GET {{baseUrl}}/employees?role_id=2
+Accept: application/json
+
+### Filtrar por Nome E Cargo ao mesmo tempo
+GET {{baseUrl}}/employees?name=Ana&role_id=4
+Accept: application/json
+
+### Testar Idade Mínima (Deve falhar se for menor de 18 anos)
+POST {{baseUrl}}/employees
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name": "Joãozinho Aprendiz",
+    "birth_date": "", 
+    "cpf": "35086284341",
+    "role_id": 1,
+    "street": "Rua Nova",
+    "number": "10",
+    "neighborhood": "Centro",
+    "city": "Nilópolis",
+    "state": "RJ"
+}
