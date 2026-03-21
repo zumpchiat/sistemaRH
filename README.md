@@ -6,7 +6,8 @@ Este projeto é uma solução para o gerenciamento de funcionários e cargos, de
 
 Aqui estão as principais telas da aplicação, focadas em usabilidade e feedback em tempo real.
 
-[![Assistir Demo](https://raw.githubusercontent.com/zumpchiat/sistemaRH/main/screenshots/frente.jpg)](https://raw.githubusercontent.com/zumpchiat/sistemaRH/main/screenshots/demo.mp4)
+[![ Clique para assistir uma demostração do sistema]()](https://youtu.be/5j-hN9DIGss)
+
 
 ###  Relatório de Funcionários e Filtros
 > A tela principal apresenta relatório com a possibilidade de buscar por **Nome** ou **Cargo**.
