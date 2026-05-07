@@ -6,7 +6,7 @@ Este projeto é uma solução para o gerenciamento de funcionários e cargos, de
 
 Aqui estão as principais telas da aplicação, focadas em usabilidade e feedback em tempo real.
 
-[![ Clique para assistir uma demostração do sistema]()](https://youtu.be/5j-hN9DIGss)
+[![ Clique para assistir uma demostração do sistema]()]()
 
 
 ###  Relatório de Funcionários e Filtros
